@@ -10,7 +10,6 @@ from sklearn import svm
 #Cleaning part:
 #to refine the data samples
 buff = []
-buff1 = []
 data = []
 
 #read from file and append data to a list, removing "\n" char at the end of
@@ -21,8 +20,6 @@ with open("wine.data") as dataFile:
 
 #cleaning further, creating an array of arrays
 for row in buff:
-    buff1.append(row)
-for row in buff1:
     data.append(row.split(','))
 
 #create 3 random number for selecting test samples
