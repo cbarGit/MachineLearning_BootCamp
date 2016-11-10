@@ -1,5 +1,4 @@
 Machine Learning Training Camp
-
 ==============================
 
 ####This repo has been created with the purpose to learn, train and test the data analysis and machine/deep learning fields.
