@@ -7,8 +7,9 @@ The code used is `Python`, with the support of the classic libraries for scienti
 
 - Numpy
 - Pandas
+- Matplotlib
+- Seaborn
 - Sklearn
-- ...
 
 The target is to cover both **supervised and unsupervised learning**.
 
