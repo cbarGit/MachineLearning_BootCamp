@@ -13,7 +13,6 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report,confusion_matrix
 
-data = []
 
 #read from file and create an Numpy array
 with open("wine.data") as dataFile:
