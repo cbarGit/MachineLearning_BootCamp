@@ -10,6 +10,8 @@ import csv
 import random
 import numpy as np
 from sklearn import svm
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report,confusion_matrix
 
 data = []
 
@@ -17,35 +19,16 @@ data = []
 with open("wine.data") as dataFile:
     data = np.array([list(map(str,row)) for row in csv.reader(dataFile, delimiter=',')])
 
-
-#create 3 random number for selecting test samples
-#test, for the random samples to choose, removing them from data
-test = []
-for i in range(0,3):
-    dataL = data.shape[0]
-    r = random.randint(0,dataL)
-    test.append(data[r])
-    print("test n° " + str(r) + " class n° " + test[0][0])
-    print(test[0])
-print()
-
-#transform list to nparray
-test = np.array(test)
-#clean the test samples removing first feature (rapresents class)
-test = test[:,1:]
-
-#instList, for the classes or labels of the sklearn's targets
-instList = data[:,:1].reshape(-1,).tolist()
-
-#clean data as test samples
-data = data[:,1:]
 #assign data and targets
-X, y = data, instList
+X, y = data[:,1:], data[:,:1]
+#print(X,y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
 
 #load algorithm and fit data and targets into it
 clf = svm.SVC()
-clf.fit(X,y)
+clf.fit(X,y.ravel())
 
-#predict on every test samples
-for n,i in enumerate(test):
-    print(clf.predict([test[n]]))
+predictions = clf.predict(X_test)
+
+print(confusion_matrix(y_test,predictions))
+print(classification_report(y_test,predictions))
