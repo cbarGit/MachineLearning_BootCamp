@@ -1,3 +1,5 @@
-###Dataset from:
+KNN Circuit:
+==================
 
->https://www.kaggle.com/hobako1993/sp1-factor-binding-sites-on-chromosome1
+This part is dedicated to the KNN excercises.
+
