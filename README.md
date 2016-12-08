@@ -1,7 +1,7 @@
 Machine Learning Boot Camp
 ==============================
 
-####This repo has been created with the purpose of learn, train and test the data analysis and machine/deep learning fields.
+####This was created with the intent to learn and test the machine learning algorithms.
 
 The code used is `Python`, with the support of the classic libraries for scientific data analysis as:
 
